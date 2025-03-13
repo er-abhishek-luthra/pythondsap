@@ -1,0 +1,56 @@
+# Ignore PyCharm IDE-specific files
+.idea/
+*.iml
+
+# Ignore Python compiled files
+__pycache__/
+*.py[cod]
+
+# Ignore Jupyter Notebook checkpoints
+.ipynb_checkpoints/
+
+# Ignore virtual environments
+venv/
+env/
+*.venv/
+
+# Ignore OS-generated files
+.DS_Store
+Thumbs.db
+
+# Ignore logs and temporary files
+logs/
+*.log
+*.csv
+*.tsv
+
+# Ignore cached data and models
+data/
+*.h5
+*.pickle
+*.pkl
+*.joblib
+
+# Ignore environment files
+.env
+*.env
+config.json
+
+# Ignore Machine Learning training artifacts
+*.ckpt
+*.onnx
+*.pb
+*.tflite
+*.hdf5
+
+# Ignore large dataset files
+*.zip
+*.tar.gz
+*.h5
+*.npy
+
+# Ignore VS Code settings (if applicable)
+.vscode/
+
+# Ignore generated documentation
+docs/_build/
