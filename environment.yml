@@ -1,0 +1,11 @@
+name: pythondsap
+channels:
+  - defaults
+dependencies:
+  - python=3.10.8
+  - numpy
+  - pandas
+  - pip
+  - pip:
+    - pytest
+    - pytest-cov
