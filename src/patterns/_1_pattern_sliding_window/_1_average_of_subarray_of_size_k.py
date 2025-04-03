@@ -1,18 +1,39 @@
 from typing import List
 
+"""
+    Calculate the averages of all contiguous subarrays of size K.
+
+    Parameters:
+    K (int): The size of the subarrays for which the averages are to be calculated.
+    arr (List[int]): The input list of integers from which the subarrays are derived.
+
+    Returns:
+    List[float]: A list containing the averages of the subarrays of size K.
+                 If K is greater than the length of arr, an empty list is returned.
+
+    Example:
+    >>> find_averages(3, [1, 3, 2, 6, -1, 4, 1, 8, 2])
+    [2.0, 2.3333333333333335, 2.6666666666666665, 3.0, 4.0, 3.0]
+"""
 def find_averages(K: int, arr: List[int]) -> List[float]:
+    if K <= 0 :
+        raise ValueError('K must be greater than 0')
+    elif K > len(arr):
+        return []
+    
     result = [0.0] * (len(arr) - K + 1)
-    window_sum = 0.0
-    window_start = 0
-
-    for window_end in range(len(arr)):
-        window_sum += arr[window_end]  # add the next element
-        # slide the window, we don't need to slide if we've not hit the required window size of 'K'
-        if window_end >= K - 1:
-            result[window_start] = window_sum / K  # calculate the average
-            window_sum -= arr[window_start]  # subtract the element going out
-            window_start += 1  # slide the window ahead
-
+    windowStart = 0
+    windowEnd = 0
+    windowSum = 0
+    
+    for i in range(len(arr)):
+        windowSum += arr[i]
+        if windowEnd >= (K - 1):
+            result[windowStart] = windowSum / K
+            windowSum -= arr[windowStart]    
+            windowStart += 1
+        windowEnd += 1
+    
     return result
 
 # Example usage
